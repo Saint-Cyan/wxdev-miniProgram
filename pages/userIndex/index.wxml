@@ -1,0 +1,16 @@
+<!--pages/userIndex/index.wxml-->
+
+<view class = "container">
+	<view>
+		<view>
+			<swiper  indicator-dots="true" asutoplay="true" circular="true" duration="500">
+				<block>
+					<swiper-item class = "custom-swiper-item" wx:for="{{swiperList}}" wx:key="*this">
+						<image src= "{{item.image}}" ></image>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+	</view>
+</view>
+

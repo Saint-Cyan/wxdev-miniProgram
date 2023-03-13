@@ -1,0 +1,8 @@
+const statusCode = {
+	USER_LOGIN_MESSAGE_ERROR:401,
+	USER_LOGIN_STATUS_OVERDUE:402,
+	USER_REQUEST_OK:200,
+	SERVER_ERROR:500
+}
+
+module.exports = globalConfig;

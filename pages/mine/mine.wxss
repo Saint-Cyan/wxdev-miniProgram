@@ -1,0 +1,153 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgb(240, 240, 240);
+  z-index: -2;
+}
+
+/* 第1部分 */
+.top-container {
+  height: 440rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 440rpx;
+  z-index: -1;
+}
+
+/* 第2部分--打车，门票，酒店，更多  begin*/
+.middle-container {
+  height: 200rpx;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  border-radius: 20rpx;
+  background-color: #FFFFFF;
+  margin: -80rpx 30rpx 26rpx 30rpx;
+  box-shadow: 0 15rpx 10rpx -15rpx #efefef;
+}
+
+.view_2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_tupianwenzi {
+  display: flex;
+  flex-direction: column;
+  width: 130rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
+
+.image_tupian {
+  display: flex;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.text_1 {
+  font-size: 30rpx;
+}
+
+/* 第2部分--打车，门票，酒店，更多  end*/
+
+/* 第3部分--扫一扫  begin*/
+.container_3 {
+  height: 100rpx;
+  display: flex;
+  border-radius: 15rpx;
+  background-color: #FFFFFF;
+  margin: 0rpx 30rpx 26rpx 30rpx;
+  box-shadow: 0 15rpx 10rpx -15rpx #efefef;
+}
+
+.image_1 {
+  display: flex;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 40rpx;
+}
+
+.image-jiantou {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  /* 要约束所在位置的子元素的位置要设置成绝对 */
+  right: 30rpx;
+  /* 靠右调节 */
+  margin-right: 35rpx
+}
+
+.middle-item {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text_2 {
+  /* margin: 0rxp 200rpx 0rpx 200rpx; */
+  font-size: 33rpx;
+  color: #505050;
+  line-height: 28rpx;
+  font-weight: bold;
+  padding-left: 20rpx;
+}
+
+/* 第3部分--扫一扫  end*/
+
+/* 第4部分--消费记录，我的积分，我的欢乐豆  begin*/
+.container_4 {
+  /* width: 100%; */
+  height: 320rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15rpx;
+  background-color: #FFFFFF;
+  margin: 0rpx 30rpx 100rpx 30rpx;
+  /* box-shadow: 0 15rpx 10rpx -15rpx #efefef; */
+}
+
+.middle-tag {
+  margin: 0rxp 200rpx 0rpx 200rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 28rpx;
+  font-weight: bold;
+  padding-left: 22rpx;
+}
+
+.image_tupian_1 {
+  display: flex;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 40rpx;
+}
+
+/* 线 */
+.view_line {
+  width: 90%;
+  height: 5rpx;
+  background: #f3f3f3;
+  /* margin: 0rxp 5% 0rxp 5%; */
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+/* 第4部分--消费记录，我的积分，，我的欢乐豆  end*/

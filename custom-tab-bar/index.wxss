@@ -1,0 +1,51 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  background: white;
+  display: flex;
+  padding: 0 5%;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+cover-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tab-bar-item cover-view {
+  font-size: 36rpx;
+}
+
+/**新添加的样式从这里开始**/
+
+/**被选中后整个item**/
+.item-selected {
+  flex: 2;
+}
+/**选中后的背景**/
+.item-content-selected{
+  background-color: rgb(255, 246, 213);
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 90rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5rpx;
+}
+.item-content-selected cover-image{
+  margin-right: 20rpx;
+}

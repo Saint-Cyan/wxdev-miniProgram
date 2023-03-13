@@ -1,0 +1,5 @@
+<!--pages/study/study.wxml-->
+
+<view class = "container">
+	<text>pages/study/study.wxml</text>
+</view>
