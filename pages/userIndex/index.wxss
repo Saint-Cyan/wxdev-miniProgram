@@ -1,22 +1,14 @@
 /* pages/userIndex/index.wxss */
 
-page {
-	height: 100%;
-	width: 100%;
-} 
-
-.container {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	background-color: rgb(240, 240, 240);
-}
-
 /*第一部分，swiper组件*/
 .custom-swiper-item {
-	height: 100%;
-	width: 100%;
+	width: 95%;
+	height: 350rpx;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.swiper-image {
+	width: 90%;
 }

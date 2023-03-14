@@ -1,1 +1,41 @@
 /* pages/questionaire/questionaire.wxss */
+.container {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(240, 240, 240);
+}
+
+.background {
+	width: 100%;
+	height: 100%
+}
+
+/* 第一部分 */
+
+.top-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;/*垂直居中*/
+	margin-top: 40rpx;
+}
+.question {
+	width: 80%;
+	font-size: large;
+	display: felx;
+	justify-content: center;
+	margin-bottom: 30rpx;
+}
+
+
+.radio-group-label {
+	display: flex;
+	margin-bottom: 10rpx;
+}
+
+
+.submit-button {
+	margin-top: 130rpx;
+}

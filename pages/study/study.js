@@ -1,4 +1,8 @@
 // pages/study/study.js
+import {
+	checkQuestion,
+} from "../../utils/util";
+
 Page({
 
 	/**
@@ -31,6 +35,7 @@ Page({
 				selected: 1
 			})
 	}
+	checkQuestion();
 	},
 
 	/**
@@ -66,5 +71,9 @@ Page({
 	 */
 	onShareAppMessage() {
 
+	},
+
+	checkStudy:function(e){
+		console.log("Check in study");
 	}
 })

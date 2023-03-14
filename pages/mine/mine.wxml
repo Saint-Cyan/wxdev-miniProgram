@@ -1,27 +1,35 @@
 <!--pages/jiaocheng/jiaocheng.wxml-->
 <view class='container'>
 	<!-- 第1部分 -->
-	<view class='top-container'>
+	<view class='top-container' >
 		<image class='bg-img' src='../../static/images/mine-background.jpg'></image>
+		<view class = "userInfo" wx:if = "{{!userLoginStatus}}" bindtap="wxlogin">
+			<image class = "unlog-userProfile" src = "{{avatarUrl}}" ></image>
+			<view  class = "login-text">{{userName}}</view>
+		</view>
+		<view class = "userInfo" wx:if = "{{userLoginStatus}}">
+			<image class = "unlog-userProfile" src = "{{avatarUrl}}" ></image>
+			<view  class = "login-text">{{userName}}</view>
+		</view>
 	</view>
 	<!-- 第2部分 -->
 	<view class='middle-container'>
 		<view class="view_2">
-			<view class="view_tupianwenzi">
-				<image class="image_tupian" src="../images/badge.png"></image>
-				<text class="text_1">打车</text>
+			<view class="view_tupianwenzi" bindtap="gotoTestPage">
+				<image class="image_tupian" src="../../static/images/test-icon.png"></image>
+				<text class="text_1" bindtap="gotoTestPage" >测试</text>
 			</view>
-			<view class="view_tupianwenzi" bindtap="webViewAll" id="2">
-				<image class="image_tupian" src="../images/card.png"></image>
-				<text class="text_1">门票</text>
+			<view class="view_tupianwenzi" bindtap="gotoPlan">
+				<image class="image_tupian" src="../../static/images/clock.png"></image>
+			  <text class="text_1">打卡</text>
 			</view>
 
-			<view class="view_tupianwenzi" bindtap="jianjie" bindtap="webViewAll" id="3">
-				<image class="image_tupian" src="../images/color.png"></image>
-				<text class="text_1">酒店</text>
+			<view class="view_tupianwenzi" bindtap="gotoMoreFunction">
+				<image class="image_tupian" src="../../static/images/plan.png"></image>
+				<text class="text_1">计划</text>
 			</view>
-			<view class="view_tupianwenzi" bindtap="webViewAll" id="6">
-				<image class="image_tupian" src="../images/flex.png"></image>
+			<view class="view_tupianwenzi" bindtap="gotoClock">
+				<image class="image_tupian" src="../../static/images/moreFunction.png"></image>		
 				<text class="text_1">更多</text>
 			</view>
 		</view>
@@ -31,34 +39,58 @@
 	<!-- 第3部分 -->
 	<view class='container_3'>
 		<view class='middle-item' hover-stay-time="150">
+		<!--
 			<image class="image_1" src="../images/saoyisao.png"></image>
+		-->
+			
 			<text class='text_2'>扫一扫</text>
-			<image class="image-jiantou" src="../images/saoyisao1.png"></image>
+			<!--
+				<image class="image-jiantou" src="../images/saoyisao1.png"></image>
+			-->
+			
 		</view>
 	</view>
 
 	<!-- 第4部分 -->
 	<view class='container_4'>
 		<view class='middle-item' hover-stay-time="150">
+		<!--
 			<image class="image_tupian_1" src="../images/setting.png"></image>
+		-->
+			
 			<text class='text_2'>设置</text>
-			<image class="image-jiantou" src="../images/jiantou.png"></image>
+			<!--
+				<image class="image-jiantou" src="../images/jiantou.png"></image>
+			-->
+			
 		</view>
 
 		<view class="view_line"></view>
 
 		<view class='middle-item' hover-class="opcity" hover-stay-time="150">
+		<!--
 			<image class="image_tupian_1" src="../images/progress.png"></image>
+		-->
+			
 			<text class='text_2'>个人信息</text>
-			<image class="image-jiantou" src="../images/jiantou.png"></image>
+			<!--
+				<image class="image-jiantou" src="../images/jiantou.png"></image>
+			-->
+			
 		</view>
 
 		<view class="view_line"></view>
 		
 		<view class='middle-item' hover-class="opcity" hover-stay-time="150">
+		<!--
 			<image class="image_tupian_1" src="../images/share.png"></image>
-			<text class='text_2'>消费记录</text>
-			<image class="image-jiantou" src="../images/jiantou.png"></image>
+		-->
+			
+			<text class='text_2'>登录管理</text>
+			<!--
+				<image class="image-jiantou" src="../images/jiantou.png"></image>
+			-->
+			
 		</view>
 	</view>
 </view>

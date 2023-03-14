@@ -2,10 +2,65 @@
 page {
 	width: 100%;
 	height: 100%;
+	background-color: rgb(240, 240, 240);
 }
 
 .container {
 	height: 100%;
 	width: 100%;
-	background-color: rgb(240, 240, 240);
+}
+
+/*第一部分*/
+
+.top-container {
+	height: 300rpx;
+	width: 100%;
+}
+
+.background-pic {
+	width: 100%;
+	height: 300rpx;
+	position: absolute;
+	z-index: -1;
+}
+
+.second-container {
+	width: 100%;
+}
+
+.userstatus-visianility {
+	height: 200rpx;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  border-radius: 20rpx;
+  background-color: #FFF9F0;
+  margin: -180rpx 30rpx 26rpx 30rpx;
+  box-shadow: 0 15rpx 10rpx -15rpx #efefef;
+}
+
+.userStatus-level {
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  align-items: center;
+  margin-left: 25rpx;
+	margin-right: 25rpx;
+	margin-left: 10%;
+}
+
+.userStatus-level-icon {
+	display: flex;
+	margin-bottom: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.userStatus-level-text {
+	font-size: 30rpx;
+}
+
+.userStatus-process-van-circle {
+	margin-left: 70%;
+	
 }

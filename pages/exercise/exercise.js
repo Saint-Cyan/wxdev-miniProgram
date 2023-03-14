@@ -1,11 +1,16 @@
 // pages/exercise/exercise.js
+import {
+	checkQuestion,
+} from "../../utils/util.js";
+
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		userLevel: "登录后查看等级",
+		exerciseProcessCircle: ''
 	},
 
 	/**
@@ -31,6 +36,7 @@ Page({
 				selected: 2
 			})
 	}
+	checkQuestion();
 	},
 
 	/**
@@ -66,5 +72,18 @@ Page({
 	 */
 	onShareAppMessage() {
 
+	},
+
+	gotoOther:function(e) {
+		console.log("Im in exercise.");
+		wx.navigateTo({
+			url: '../navigateTest/test',
+			success: (res) => {
+				console.log(res);
+			},
+			fail: (err) => {
+				console.log(err);
+			}
+		})
 	}
 })

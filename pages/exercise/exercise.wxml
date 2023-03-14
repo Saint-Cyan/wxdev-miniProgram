@@ -1,4 +1,17 @@
 <!--pages/exercise/exercise.wxml-->
 <view class = "container">
-	<text>pages/exercise/exercise.wxml</text>
+	<view class = "top-container">
+		<image class = "background-pic" src = "../../static/images/exercise-background.jpg"></image>
+	</view>
+	<view class = "second-container">
+		<view class = "userstatus-visianility">
+			<view class = "userStatus-level">
+				<image class = "userStatus-level-icon" src = "../../static/images/exercise-userLevel.png"></image>
+				<text class = "userStatus-level-text">您是无意向者</text>
+			</view>
+			<view class = "userStatus-process-bar">
+				<van-circle class = "userStatus-process-van-circle" layer-color="#ebedf0" ></van-circle>
+			</view>
+		</view>
+	</view>
 </view>

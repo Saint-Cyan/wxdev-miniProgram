@@ -1,2 +1,22 @@
 <!--pages/questionaire/questionaire.wxml-->
-<text>pages/questionaire/questionaire.wxml</text>
+<view class = "container">
+	<image  class = "background" src = "../../static/images/questionaire-background.jpg" mode ="widthFix"></image>
+	<view class = "top-container">
+		<view class = "question">
+			您最近是否每周至少有5天进行30分钟或以上（或每周超过2.5小时）让你感到适度疲惫的运动？
+		</view>
+		<view class = "radio-group-body">
+			<radio-group bindchange="handleRadio">
+				<label class = "radio-group-label" wx:for="{{items}}" wx:key="value">
+					<view  class = "radio-item-body">
+						<radio value="{{item.value}}"></radio>
+					</view>
+						<view class = "radio-value-name">{{item.name}}</view>
+				</label>
+			</radio-group>
+		</view>
+		<view class = "submit-button">
+			<button type="primary" bindtap="submitQuestion">提交</button>
+		</view>
+	</view>
+</view>

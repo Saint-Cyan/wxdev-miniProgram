@@ -1,4 +1,8 @@
 // pages/userIndex/index.js
+import {
+	checkQuestion,
+} from "../../utils/util";
+
 Page({
 
 	/**
@@ -50,6 +54,7 @@ Page({
 				selected: 0
 			})
 	}
+	checkQuestion();
 	},
 
 	/**
