@@ -2,7 +2,7 @@
 page {
 	width: 100%;
 	height: 100%;
-	background-color: rgb(240, 240, 240);
+	background-color: rgb(240,240,240);
 }
 
 .container {
@@ -22,6 +22,7 @@ page {
 	height: 300rpx;
 	position: absolute;
 	z-index: -1;
+	border-radius: 20rpx;
 }
 
 .second-container {
@@ -34,8 +35,8 @@ page {
   /* flex-direction: column; */
   align-items: center;
   border-radius: 20rpx;
-  background-color: #FFF9F0;
-  margin: -180rpx 30rpx 26rpx 30rpx;
+  background-color: white;
+  margin: -120rpx 30rpx 26rpx 30rpx;
   box-shadow: 0 15rpx 10rpx -15rpx #efefef;
 }
 
@@ -61,6 +62,79 @@ page {
 }
 
 .userStatus-process-van-circle {
+	margin-top: auto;
+	margin-bottom: auto;
 	margin-left: 70%;
-	
+}
+
+.skeleton-container {
+	margin-top: 20rpx;
+}
+
+.scroll-box {
+	margin: 0 auto;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+	background: #FFF;
+	width: 90%;
+	border-radius: 20rpx;
+  height: 120rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;	
+}
+.exercise-scroll-data-item {
+  display: inline-block;
+  text-align: center;
+	height: 90rpx;
+	width: 50rpx;
+  line-height: 90rpx;
+  margin: 0 24rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.data {
+	font-size: large;
+	font-weight: 300;
+	color: slategray;
+}
+
+.data.active {
+	font-size: 38rpx;
+	font-weight: 350;
+	color: slateblue;
+}
+
+.dot.active {
+	margin: -4rpx 0 auto auto;
+	border-bottom-style: dotted;
+	color: slateblue;
+	border-bottom-width: 8rpx;
+}
+
+.fifth-container {
+	width: 90%;
+	height: 400rpx;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25rpx;
+	border-radius: 20rpx;
+	background-color: white;
+}
+
+.exercise-text {
+	padding-left: 10rpx;
+	padding-top: 10rpx;
+	margin-left: 15rpx;
+	border-left-style: solid;
+	border-left-color: #00C200;
+	border-left-width: 6rpx;
+}
+
+.exercise-selector {
+	margin-top: 20rpx;
 }

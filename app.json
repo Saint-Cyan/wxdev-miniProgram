@@ -51,6 +51,14 @@
 		]
 	},
 	"usingComponents": {
-		"van-circle": "./components/wxconponent/vant/dist/circle/index"
+		"van-circle": "./components/wxconponent/vant/dist/circle/index",
+		"van-skeleton": "./components/wxconponent/vant/dist/skeleton/index",
+		"van-count-down": "./components/wxconponent/vant/dist/count-down/index",
+		"van-grid": "./components/wxconponent/vant/dist/grid/index",
+		"van-grid-item": "./components/wxconponent/vant/dist/grid-item/index",
+		"van-picker": "./components/wxconponent/vant/dist/picker/index",
+		"van-popup": "./components/wxconponent/vant/dist/popup/index",
+		"van-cell": "./components/wxconponent/vant/dist/cell/index",
+		"van-cell-group": "./components/wxconponent/vant/dist/cell-group/index"
 	}
 }

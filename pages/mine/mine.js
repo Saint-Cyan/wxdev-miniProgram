@@ -45,7 +45,20 @@ Page({
 
 		checkQuestion();
 
-		
+		if(wx.getStorageSync('token')) {
+			//登录未过期
+			wx.getUserProfile({
+				desc: '获取昵称与微信用户名',
+				lang: 'zh_CN',
+				success: (res) => {
+					this.setData({
+						userLoginStatus: true,
+						avatarUrl: res.userInfo.avatarUrl,
+						userName: res.userInfo.nickName,
+					})
+				}
+			})
+		}
 	},
 
 	/**
@@ -154,10 +167,10 @@ Page({
 	},
 
 	gotoClock:function(e) {
-		wx.navigateTo({
-			url: '../mine/mine_pages/clock',
+		wx.showToast({
+			title: '更多功能敬请期待',
+			icon: 'none',
 		})
 	},
-
 
 })

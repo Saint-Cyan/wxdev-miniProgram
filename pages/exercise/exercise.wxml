@@ -1,17 +1,62 @@
 <!--pages/exercise/exercise.wxml-->
 <view class = "container">
 	<view class = "top-container">
-		<image class = "background-pic" src = "../../static/images/exercise-background.jpg"></image>
+		<image class = "background-pic" src = "../../static/images/exercise-background.png"></image>
 	</view>
 	<view class = "second-container">
 		<view class = "userstatus-visianility">
 			<view class = "userStatus-level">
 				<image class = "userStatus-level-icon" src = "../../static/images/exercise-userLevel.png"></image>
-				<text class = "userStatus-level-text">您是无意向者</text>
+				<text class = "userStatus-level-text">Level: {{role}}</text>
 			</view>
 			<view class = "userStatus-process-bar">
-				<van-circle class = "userStatus-process-van-circle" layer-color="#ebedf0" ></van-circle>
+				<van-circle class = "userStatus-process-van-circle" layer-color="#ebedf0" stroke-width="10" size = "90" text="{{exerciseTime}}/30(min)"></van-circle>
 			</view>
 		</view>
 	</view>
+	<view class = "third-container">
+		<view class = "skeleton-container">
+			<van-skeleton title avatar row = "3" avatar-shape = "square" avatar-size = "100px" style="background-color: red" loading = '{{!canUserGetExercise}}'/>
+		</view>
+		<view class = "skeleton-container">
+			<van-skeleton title avatar row = "3" avatar-shape = "square" avatar-size = "100px" style="background-color: red" loading = '{{!canUserGetExercise}}'/>
+		</view>
+		<view class = "skeleton-container">
+			<van-skeleton title avatar row = "3" avatar-shape = "square" avatar-size = "100px" style="background-color: red" loading = '{{!canUserGetExercise}}'/>
+		</view>
+		<view class = "exercise-scroll-box" wx:if="{{canUserGetExercise}}">
+			<scroll-view class = "scroll-box" scroll-x="true" 	scroll-with-animation="true" scroll-into-view="item{{currentTap < 4 ? 0 : currentTap - 3}}">
+				<view class = "exercise-scroll-data-item" wx:for="{{exerciseData}}" id="item{{index}}" data-index="{{index}}" wx:key="{{index}}" bindtap="handleClick">
+					<view class = "data {{currentTap === index ? 'active' : ''}}">{{item.message}}</view>
+					<view class = "dot {{currentTap === index ? 'active' : ''}}"></view> 
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+	<view class = "fifth-container" wx:if="{{canUserGetExercise}}">
+			<view class = "today-exercise-box">
+				<view class = "exercise-text">运动表现</view>
+				<view class = "exercise-selector">
+					<van-cell-group inset>
+						<van-cell title="选择运动" value="{{exerciseSelected}}" size = "large" bind:click="showPopup"></van-cell>
+						<van-popup 
+						show="{{showPop}}" 
+						bind:close="closepopup" 
+						position = "bottom">
+							<van-picker 
+							columns = "{{columns}}" 
+							show-toolbar
+							title="请选择运动"
+							bind:change = "onChange"
+							bind:cancel = "onCancel"	
+							bind:confirm = "onConfirm"						
+							></van-picker>
+						</van-popup>
+					</van-cell-group>
+				</view>
+				<view class = "exercise-timmer">
+					
+				</view>
+			</view>
+		</view>
 </view>
