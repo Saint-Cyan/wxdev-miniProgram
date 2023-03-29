@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/',(req,res)=>{
-	res.send("测试成功")
+	res.send('I love you. BB');
 })
 
 

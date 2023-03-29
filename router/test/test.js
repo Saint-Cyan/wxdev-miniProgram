@@ -9,7 +9,7 @@ router.post('/',function(req,res){
 	
 	const {id , test} = {...req.body}
 	
-	const sql = `select * from user where id = ${id}`
+	const sql = `select * from all_user where user_id = ${id}`
 	
 	var userLevel = ''
 	
@@ -23,21 +23,21 @@ router.post('/',function(req,res){
 				if(test == 'opt_1' || test == 'opt_2'){
 					console.log('用户是无意向者')
 					userLevel = '1'
-					const sql = `update user set level = '1' , is_test = '1'`
+					const sql = `update all_user set user_level = '1' , user_teststatus = '1'`
 					sqlQuery(sql,(data)=>{
 						console.log(data)
 					})
 				}else if(test == 'opt_3'){
 					console.log('用户是意向者')
 					userLevel = '2'
-					const sql = `update user set level = '2' , is_test = '1'`
+					const sql = `update all_user set user_level = '2' , user_teststatus = '1'`
 					sqlQuery(sql,(data)=>{
 						console.log(data)
 					})
 				}else if(test == 'opt_4' || test == 'opt_5'){
 					console.log('用户是行动者')
 					userLevel = '3'
-					const sql = `update user set level = '3' , is_test = '1'`
+					const sql = `update all_user set user_level = '3' , user_teststatus = '1'`
 					sqlQuery(sql,(data)=>{
 						console.log(data)
 					})

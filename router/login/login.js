@@ -52,7 +52,7 @@ router.post('/',async function(req,res){
 			return res.status(401).send("invaild user")
 		}
 		//数据库查询
-		const sql = `select * from user where user_id = '${jsonObj.openid}'`
+		const sql = `select * from all_user where user_openid = '${jsonObj.openid}'`
 		
 		sqlQuery(sql,(data, err)=>{
 			if(err){
@@ -62,16 +62,15 @@ router.post('/',async function(req,res){
 			if(data.length == 0){
 				console.log("新用户")
 				//插入新用户
-				const sql = `insert into user (user_id) values ('${jsonObj.openid}')`;
+				const sql = `insert into all_user (user_openid) values ('${jsonObj.openid}')`;
 				sqlQuery(sql,(data)=>{
 					console.log(data);
-					const sql = `select * from user where user_id = '${jsonObj.openid}'`;
+					const sql = `select * from all_user where user_openid = '${jsonObj.openid}'`;
 					sqlQuery(sql,(data)=>{
 						returnData = {
-							user_id:data[0].id,
-							level:data[0].level,
-							coin:data[0].coin,
-							is_test:data[0].is_test,
+							user_id:data[0].user_id,
+							level:data[0].user_level,
+							is_test:data[0].user_teststatus,
 						}
 						return res.status(200).send(returnData).end();
 					})
@@ -80,10 +79,9 @@ router.post('/',async function(req,res){
 			//用户存在
 			if(data.length != 0){
 				returnData = {
-					user_id:data[0].id,
-					level:data[0].level,
-					coin:data[0].coin,
-					is_test:data[0].is_test,
+					user_id:data[0].user_id,
+					level:data[0].user_level,
+					is_test:data[0].user_teststatus,
 				}
 				
 				return res.status(200).send(returnData).end()
