@@ -1,2 +1,13 @@
 <!--pages/mine/mine_pages/test/test.wxml-->
-<text>pages/mine/mine_pages/test/test.wxml</text>
+<view class = "container">
+	<view class = "test">
+	<van-cell-group class = "test-group" inset title = "用户测试-发现更好的自己">
+		<van-cell class = "test-item" wx:for="{{testList}}"
+		title = "{{item.testlist_title}}"
+		label = "{{item.testlist_introduce}}"
+		data-url="{{item.testlist_url}}"
+		bind:click= "handleClick">
+		</van-cell>
+	</van-cell-group>
+	</view>
+</view>

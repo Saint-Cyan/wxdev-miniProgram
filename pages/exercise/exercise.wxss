@@ -118,7 +118,7 @@ page {
 
 .fifth-container {
 	width: 90%;
-	height: 400rpx;
+	height: 40%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25rpx;
@@ -138,3 +138,13 @@ page {
 .exercise-selector {
 	margin-top: 20rpx;
 }
+
+.time-selector {
+	margin-top: 5%;
+}
+
+.timer-title {
+	margin-top: 40rpx;
+	margin-bottom: 30rpx;
+}
+

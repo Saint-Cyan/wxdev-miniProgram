@@ -115,12 +115,11 @@ Page({
 				wx.login({
 					success: (res) => {
 						login({
-							code:res.code,
+							code: res.code,
 						}).then((res) => {
 							if (res.statusCode == 200) {
 								wx.setStorageSync('token', res.data.user_id);
 								wx.setStorageSync('level', res.data.level);
-								wx.setStorageSync('coin', res.data.coin);
 								wx.setStorageSync('is_test', res.data.is_test);
 								this.setData({
 									userLoginStatus: true,
@@ -131,38 +130,48 @@ Page({
 								})
 							} else {
 								console.log("ERROR! Stautus code: " + res.statusCode);
+								wx.showToast({
+									title: "登录失败",
+									icon: 'error'
+								})
 							}
 						}).catch((err) => {
 							console.log("ERROR! Fail to connect server. Error message :" + err);
+							wx.showToast({
+								title: '登录失败',
+								icon: 'error'
+							})
 						})
 					},
 					fail: (res) => {
 						console.log("error occur:" + err);
+						wx.showToast({
+							title: '登录失败',
+							icon: 'error'
+						})
 					}
 				})
 			},
 			fail: (res) => {
 				console.log("error occur:" + err);
+				wx.showToast({
+					title: '获取用户信息失败',
+					icon: 'error'
+				})
 			}
 		})
 	},
 
 	gotoTestPage:function(e) {
-		console.log("Im ok！");
 		wx.navigateTo({
 			url: '../mine/mine_pages/testPage/test',
 		})
 	},
 
 	gotoPlan:function(e) {
-		wx.navigateTo({
-			url: '../mine/mine_pages/plan/plan',
-		})
-	},
-
-	gotoMoreFunction:function(e) {
-		wx.navigateTo({
-			url: '../mine/mine_pages/moreFunction/moreFunction',
+		wx.showToast({
+			title: '锻炼计划还在开发中',
+			icon: 'none'
 		})
 	},
 

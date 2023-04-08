@@ -1,27 +1,24 @@
-// pages/mine/mine_pages/test/test.js
+// pages/article/article.js
 
 import {
-	getInittestlistData,
-} from "../../../../utils/user";
+	getStaticFile,
+} from '../../utils/user'
 
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		testList: []
+		url: '',
+		article: [],
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad(options) {
-		getInittestlistData().then((res) => {
-			this.setData({
-				testList: res.data,
-			})
-			console.log(this.data.testList);
+		this.setData({
+			url: options.url,
 		})
 	},
 
@@ -36,7 +33,17 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow() {
-
+		getStaticFile(this.data.url).then((res) => {
+			this.setData({
+				article: res.data,
+			})
+		}).catch((err) => {
+			console.log(err);
+			wx.showToast({
+				title: '发生错误',
+				icon: 'error',
+			})
+		})
 	},
 
 	/**
@@ -72,12 +79,5 @@ Page({
 	 */
 	onShareAppMessage() {
 
-	},
-
-	handleClick:function(e) {
-		console.log(e);
-		wx.navigateTo({
-			url: '../../../usertest/usertest?url=' + e.currentTarget.dataset.url,
-		})
 	}
 })

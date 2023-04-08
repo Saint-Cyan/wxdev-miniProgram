@@ -11,7 +11,9 @@
 		"pages/mine/mine_pages/clock/clock",
 		"pages/mine/mine_pages/plan/plan",
 		"pages/mine/mine_pages/moreFunction/moreFunction",
-		"pages/navigateTest/test"
+		"pages/navigateTest/test",
+		"pages/article/article",
+		"pages/usertest/usertest"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -59,6 +61,11 @@
 		"van-picker": "./components/wxconponent/vant/dist/picker/index",
 		"van-popup": "./components/wxconponent/vant/dist/popup/index",
 		"van-cell": "./components/wxconponent/vant/dist/cell/index",
-		"van-cell-group": "./components/wxconponent/vant/dist/cell-group/index"
+		"van-cell-group": "./components/wxconponent/vant/dist/cell-group/index",
+		"van-slider": "./components/wxconponent/vant/dist/slider/index",
+		"van-search": "./components/wxconponent/vant/dist/search/index",
+		"van-radio": "./components/wxconponent/vant/dist/radio/index",
+		"van-radio-group": "./components/wxconponent/vant/dist/radio-group/index",
+		"van-button": "./components/wxconponent/vant/dist/button/index"
 	}
 }

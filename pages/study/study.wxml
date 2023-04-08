@@ -1,5 +1,20 @@
 <!--pages/study/study.wxml-->
 
 <view class = "container">
-	<text bindtap="checkStudy">pages/study/study.wxml</text>
+	<view class = "study-item">
+		<van-cell-group inset>
+			<van-cell 
+			title = "运动重要性学习"
+			label = "请无意向者完成学习内容"
+			size = "large" />
+		</van-cell-group>
+		<van-cell-group inset class = "cellgroup"
+		title = "学习内容">
+			<van-cell class = "study-cell-item" wx:for = "{{resourceData}}" wx:for-item = "item" wx:for-index = "index"
+			title = "{{item.resource_title}}"
+			label = "{{item.resource_introduce}}" 
+			data-url="{{item.resource_url}}"
+			bind:click = "handleCellClick" />
+		</van-cell-group>
+	</view>
 </view>

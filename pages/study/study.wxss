@@ -9,3 +9,7 @@ page {
 	width: 100%;
 	background-color: rgb(240, 240, 240);
 }
+
+.study-item {
+	padding-top: 30rpx;
+}

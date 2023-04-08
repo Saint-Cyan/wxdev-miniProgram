@@ -3,13 +3,17 @@ import {
 	checkQuestion,
 } from "../../utils/util";
 
+import {
+	getInitResourceData,
+} from "../../utils/user";
+
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		resourceData: [],
 	},
 
 	/**
@@ -35,6 +39,12 @@ Page({
 				selected: 1
 			})
 	}
+	getInitResourceData({}).then((res) => {
+		this.setData({
+			resourceData: res.data,
+		})
+		console.log(this.data.resourceData);
+	})
 	checkQuestion();
 	},
 
@@ -75,5 +85,11 @@ Page({
 
 	checkStudy:function(e){
 		console.log("Check in study");
+	},
+
+	handleCellClick:function(e) {
+		wx.navigateTo({
+			url: '../article/article?url=' + e.currentTarget.dataset.url,
+		})
 	}
 })

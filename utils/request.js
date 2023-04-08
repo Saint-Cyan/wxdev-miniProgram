@@ -2,7 +2,7 @@
 //系统http访问库
 // Api URL 
 
-const baseUrl = "http://localhost:7788";
+const baseUrl = "http://43.136.245.249:7788";
 
 const request = (param) => {
   let url = param.url;
@@ -33,5 +33,5 @@ const request = (param) => {
 }
 
 module.exports = {
-	request
+	request,
 };

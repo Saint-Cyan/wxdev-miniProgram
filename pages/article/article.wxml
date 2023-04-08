@@ -1,0 +1,23 @@
+<!--pages/article/article.wxml-->
+<view class = "container">
+
+<!--header-->
+	<view class = "header-container">
+		<view class = "title">{{article.title}}</view>
+		<view class = "author-date-container">
+			<view class = "author">{{article.author}}</view>
+			<view class = "date">{{article.date}}</view>
+		</view>
+	</view>
+
+<!--content-->
+	<view class = "content-container">
+		<view class = "content-item" wx:for = "{{article.content}}" wx:for-item = "item" wx:for-index = "idx">
+		{{item}}</view>
+	</view>
+<!--reference-->
+	<view class = "reference">
+		<view class = "reference-item">{{article.references}}</view>
+	</view>
+	
+</view>

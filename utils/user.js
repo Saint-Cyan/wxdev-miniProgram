@@ -47,3 +47,56 @@ export const userStorageInit = (param) => {
 export const deleteUserStorage = (param) => {
 	return remove();
 }
+
+//get init data when init exercise page
+export const initExerciseDate = (param) => {
+	return request({
+		url: '/exercise/init',
+		data: param,
+		method: 'POST',
+	})
+}
+
+//insert user exercise time
+export const insertExerciseDate = (param) => {
+	return request({
+		url: '/exercise/insert',
+		data: param,
+		method: 'POST',
+	})
+}
+
+//init userIndex by getting resource
+export const getInitResourceData = (param) => {
+	return request({
+		url: '/resource/init',
+		data: param,
+		method: 'POST',
+	})
+}
+
+// get static json file
+export const getStaticFile = (param) => {
+	return request({
+		url: param,
+		method: 'GET',
+	})
+}
+
+//init test module by getting testlist
+export const getInittestlistData = (param) => {
+	return request({
+		url: '/test/getList',
+		data: param,
+		method: 'POST',
+	})
+}
+
+// user test submit and pass check
+export const testAnsSubmit =  (param) => {
+	return request({
+		url: '/test/subAns',
+		data: param,
+		method: 'POST',
+	})
+}

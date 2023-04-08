@@ -10,7 +10,7 @@
 				<text class = "userStatus-level-text">Level: {{role}}</text>
 			</view>
 			<view class = "userStatus-process-bar">
-				<van-circle class = "userStatus-process-van-circle" layer-color="#ebedf0" stroke-width="10" size = "90" text="{{exerciseTime}}/30(min)"></van-circle>
+				<van-circle class = "userStatus-process-van-circle" layer-color="#ebedf0" stroke-width="10" size = "100" text="{{exerciseTime}}/30(min)"></van-circle>
 			</view>
 		</view>
 	</view>
@@ -54,8 +54,36 @@
 						</van-popup>
 					</van-cell-group>
 				</view>
+				<view class = "time-selector">
+					<van-slider
+					use-slot-button
+					value = "{{sliderValue}}"
+					max = "60"
+					min = "1"
+					bind:drag = "dragslider"
+					disabled = "{{ sliderdisable }}"
+					>
+					<view 
+					class = "slider-slot-button"
+					slot = "button"
+					>{{sliderValue}}</view>
+					</van-slider>
+				</view>
+				<view class = "timer-title">运动计时</view>
 				<view class = "exercise-timmer">
+					<van-count-down class = "exercise-count-down"
+					time = "{{time}}"
 					
+					format = "mm分ss秒"
+					auto-start = "{{ false }}"
+					bind:finish = "timerfinish">
+					</van-count-down>
+
+					<van-grid clickable column-num="3" class = "control-count-down">
+						<van-grid-item text="开始" icon="play-circle-o" bind:click="start"></van-grid-item>
+						<van-grid-item text="暂停" icon="pause-circle-o" bind:click="pause"></van-grid-item>
+						<van-grid-item text="重置" icon="replay" bind:click="reset"></van-grid-item>
+					</van-grid>
 				</view>
 			</view>
 		</view>

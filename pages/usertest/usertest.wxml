@@ -1,0 +1,38 @@
+<!--pages/usertest/usertest.wxml-->
+<view class = "container">
+	<view class = "header">
+		<view class = "title">{{testConten.name}}</view>
+		<view class = "suitGroup">面向:{{testConten.suitGroup}}</view>
+	</view>
+
+	<view class = "content">
+		<swiper class = "test-swiper-group"
+		current = "{{currentQuestion}}"
+		>
+			<block class = "test-question-item-block" wx:for = "{{testConten.content}}" wx:for-item = "questionItem" wx:for-index = "questionIndex">
+			<swiper-item class = "test-swiper-item">
+				<view class = "test-question-item">问题{{questionIndex+1}}:{{questionItem}}</view>
+
+				<van-radio-group value = "{{radio[questionIndex]}}">
+					<van-cell-group class = "answer-cell-group" inset title="请选择您对问题的看法">
+						<van-cell class = "itemSelected" wx:for="{{testConten.answer}}" wx:for-item = "ansItem" wx:for-index = "ansIndex"
+						title= "{{ansItem}}"
+						clickable
+						data-questionindex = "{{questionIndex}}"
+						data-ansindex="{{ansIndex}}"
+						bind:click = "handleClick">
+							<van-radio slot = "right-icon" name="{{ansIndex}}"></van-radio>
+						</van-cell>
+
+					</van-cell-group>
+				</van-radio-group>
+
+			</swiper-item>
+			</block>
+		</swiper>
+		<view class = "button-block">
+			<view class = "button-prompt">回答所有题目后提交问卷</view>
+			<van-button class = "testsubmit-button" type = "primary" size = "large" disabled = "{{buttonDisable}}" bind:click = "submitAnswer">提交</van-button>
+		</view>
+	</view>
+</view>

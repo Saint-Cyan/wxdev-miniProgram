@@ -1,6 +1,10 @@
 /* pages/userIndex/index.wxss */
 
-/*第一部分，swiper组件*/
+/*第一部分，van-search组件*/
+.search {
+	margin-bottom: 30rpx;
+}
+/*第二部分，swiper组件*/
 .custom-swiper-item {
 	width: 95%;
 	height: 350rpx;

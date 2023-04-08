@@ -25,6 +25,7 @@ export const remove = () => {
 			wx.removeStorageSync('level');
 			wx.removeStorageSync('coin');
 			wx.removeStorageSync('is_test');
+			wx.removeStorageSync('questionaireAnswer');
 			resolve("Success");
 		}catch(err){
 			reject(err);

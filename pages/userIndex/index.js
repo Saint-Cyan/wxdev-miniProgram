@@ -3,6 +3,10 @@ import {
 	checkQuestion,
 } from "../../utils/util";
 
+import {
+	getInitResourceData,
+} from "../../utils/user";
+
 Page({
 
 	/**
@@ -11,24 +15,26 @@ Page({
 	data: {
 		title: 'Hello',
 		userLevel: "未登录",
-		playSrc: "http://localhost:7788/public/gaoxueyayufang.mp4",
+		playSrc: "http://43.136.245.249:7788/public/gaoxueyayufang.mp4",
 		swiperList:[
 			{
-				image:"http://localhost:7788/public/gaoxueyayufang.png",
+				image:"http://43.136.245.249:7788/public/gaoxueyayufang.png",
 				title:"高血压的危害",
-				source:"http://localhost:7788/public/gaoxueyayufang.mp4"
+				source:"http://43.136.245.249:7788/public/gaoxueyayufang.mp4"
 			},
 			{
-				image:"http://localhost:7788/public/gaoxueyaweihai.png",
+				image:"http://43.136.245.249:7788/public/gaoxueyaweihai.png",
 				title:"高血压危害",
-				source:"http://localhost:7788/public/gaoxueyaweihai.mp4",
+				source:"http://43.136.245.249:7788/public/gaoxueyaweihai.mp4",
 			},
 			{
-				image:"http://localhost:7788/public/gaoxueyazhuyi.png",
+				image:"http://43.136.245.249:7788/public/gaoxueyazhuyi.png",
 				title:"高血压注意",
-				source:"http://localhost:7788/public/gaoxueyazhuyi.mp4"
+				source:"http://43.136.245.249:7788/public/gaoxueyazhuyi.mp4"
 			}
-		]
+		],
+		searchValue: "",
+		resourceList: []
 	},
 
 	/**
@@ -54,6 +60,12 @@ Page({
 				selected: 0
 			})
 	}
+	getInitResourceData({}).then((res) => {
+		this.setData({
+			resourceList: res.data,
+		})
+	});
+	
 	checkQuestion();
 	},
 
